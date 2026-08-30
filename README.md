@@ -6,6 +6,11 @@
 
 This repository contains the official LaTeX manuscript, mathematical proofs, and Python Monte Carlo simulation engine for **Synapticide's Law** and the **Systemic AI Cascade Loss (SACL)** framework.
 
+To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cyber due diligence, this repository includes two operational implementation tools for calculating Systemic AI Cascade Loss ($\text{SACL}$) and verifying compliance against the **Synapticide Maturity & Containment Framework (SMCF)**:
+
+- **`tools/sacl_audit.py` (CLI Utility):** A lightweight, zero-dependency command-line Python script designed for integration into DevOps pipelines, CI/CD security checks, and automated risk auditing workflows.
+- **`tools/colab_sacl_audit_py.ipynb` (Interactive Notebook):** A ready-to-run Google Colab notebook providing an interactive environment for CISOs, enterprise architects, and actuarial underwriters to model custom multi-agent swarm parameters, simulate velocity thresholds, and generate formal SMCF compliance reports without requiring local Python environments.
+
 ## Abstract
 As cybersecurity threats transition from static credential vulnerabilities to machine-speed autonomous Large Language Model (LLM) agent swarms, traditional single-entity risk frameworks (such as FAIR and ISO 27005) fail to model multi-sided, cross-platform financial destruction. We establish **Synapticide's Law**, a fundamental theorem governing machine-speed cognitive network collapse, and introduce the **Systemic AI Cascade Loss (SACL)** mathematical model.
 
@@ -34,9 +39,13 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 └── README.md
 ```
 
-## Quickstart: Enterprise SACL Risk Audit Utility
+## Quickstart: Enterprise SACL Audit Tools
 
-Audit autonomous agent deployments against the **Synapticide Maturity & Containment Framework (SMCF)** using the built-in CLI tool:
+### Option 1: Interactive Google Colab Notebook
+Open and run `tools/colab_sacl_audit_py.ipynb` directly in Google Colab to execute interactive scenario modeling, visualize parameter limits, and generate instantaneous SMCF compliance pass/fail audits.
+
+### Option 2: Command-Line Interface (CLI)
+Run the audit calculator locally or inside automated CI/CD pipelines:
 
 ```bash
 # Basic Audit Run
