@@ -6,7 +6,7 @@
 
 This repository contains the official LaTeX manuscript, mathematical proofs, and Python Monte Carlo simulation engine for **Synapticide's Law** and the **Systemic AI Cascade Loss (SACL)** framework.
 
-To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cyber due diligence, this repository includes two operational implementation tools for calculating Systemic AI Cascade Loss ($\text{SACL}$) and verifying compliance against the **Synapticide Maturity & Containment Framework (SMCF)**:
+To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cyber due diligence, this repository includes two operational implementation tools for calculating Systemic AI Cascade Loss ($`\text{SACL}`$) and verifying compliance against the **Synapticide Maturity & Containment Framework (SMCF)**:
 
 - **`tools/sacl_audit.py` (CLI Utility):** A lightweight, zero-dependency command-line Python script designed for integration into DevOps pipelines, CI/CD security checks, and automated risk auditing workflows.
 - **`tools/colab_sacl_audit_py.ipynb` (Interactive Notebook):** A ready-to-run Google Colab notebook providing an interactive environment for CISOs, enterprise architects, and actuarial underwriters to model custom multi-agent swarm parameters, simulate velocity thresholds, and generate formal SMCF compliance reports without requiring local Python environments.
