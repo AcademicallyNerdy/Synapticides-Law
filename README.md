@@ -1,6 +1,6 @@
 # Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22168188.svg)](https://doi.org/10.5281/zenodo.22168188)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -49,6 +49,6 @@ If you use, reference, or build upon the *Synapticide's Law* framework or its as
   year         = 2026,
   publisher    = {Zenodo},
   version      = {v1.0.0},
-  doi          = {10.5281/zenodo.xxxx},
-  url          = {[https://doi.org/10.5281/zenodo.xxxx](https://doi.org/10.5281/zenodo.xxxx)}
+  doi          = {10.5281/zenodo.22168188},
+  url          = {[https://doi.org/10.5281/zenodo.22168188](https://doi.org/10.5281/zenodo.22168188)}
 }
