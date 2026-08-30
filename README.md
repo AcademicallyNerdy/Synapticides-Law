@@ -19,6 +19,8 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 ├── paper/                  # Overleaf LaTeX manuscript source files
 │   ├── main.tex
 │   ├── references.bib
+│   ├── docs/               # How-To
+│   │   └── ENTERPRISE_INTEGRATION.md
 │   ├── figures/
 │   │   └── case_study_comparative.tex
 │   └── sections/
@@ -38,6 +40,18 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 ├── LICENSE
 └── README.md
 ```
+
+### 🏛️ Enterprise Architecture & GRC Integration
+
+For CISOs, Enterprise Architects (TOGAF), M&A deal teams, and GRC auditors looking to operationalize Synapticide's Law within established corporate governance and security frameworks, see our detailed blueprint:
+
+👉 **[Enterprise Architecture & GRC Integration Guide](docs/ENTERPRISE_INTEGRATION.md)**
+
+#### Key Integration Highlights:
+- **TOGAF Phase G & ARB Gates:** Gating CapEx approvals for agent swarms ($M_{\text{swarm}} > 1$) using quantitative $\text{VaR}_{95\%}$ thresholds and $K_{\text{cb}}$ circuit breaker verifications.
+- **M&A Due Diligence & PPA:** Factoring latent agentic capability escalation into purchase price holdbacks, escrows, and valuation haircuts ($\Delta \text{Valuation}$).
+- **NIST CSF 2.0 / ISO 27001 Mapping:** Concrete control overlays for PR.IR-01, DE.CM-01, and Control A.8.23.
+- **SIEM/SOAR Playbooks:** Triggering **Automated Synapticide** (sub-300s token revocation and sandbox ejection) at machine speed without manual intervention lag.
 
 ## Quickstart: Enterprise SACL Audit Tools
 
