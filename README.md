@@ -15,12 +15,35 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 │   ├── main.tex
 │   ├── references.bib
 │   ├── figures/
+│   │   └── case_study_comparative.tex
 │   └── sections/
+│       ├── 01_intro.tex
+│       ├── 02_math_model.tex
+│       ├── 03_axioms.tex
+│       ├── 04_case_studies.tex
+│       ├── 05_governance.tex
+│       ├── 06_simulation.tex
+│       └── 07_conclusion.tex
 ├── simulation/             # Python Monte Carlo simulation engine
 │   ├── sacl_monte_carlo.py
 │   └── requirements.txt
+├── tools/                  # Interactive audit utilities & notebooks
+│   ├── sacl_audit.py
+│   └── colab_sacl_audit_py.ipynb
 ├── LICENSE
 └── README.md
+```
+
+## Quickstart: Enterprise SACL Risk Audit Utility
+
+Audit autonomous agent deployments against the **Synapticide Maturity & Containment Framework (SMCF)** using the built-in CLI tool:
+
+```bash
+# Basic Audit Run
+python3 tools/sacl_audit.py --agents 250 --ops 100 --latency 264 --k_cb 1000000
+
+# High-Velocity Swarm Simulation (500 Agents, Unmitigated 11-Day Egress Window)
+python3 tools/sacl_audit.py --agents 500 --alpha 1.3 --latency 264 --k_cb 0
 ```
 
 ## License & Intellectual Property
