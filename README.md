@@ -38,7 +38,7 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 If you use, reference, or build upon the *Synapticide's Law* framework or its associated assets in academic literature, software, or media, please cite this work using the following metadata:
 
 **Preferred APA Citation:**
-> Rosen, C. (2026). *Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes* (Version 1.0.0) [Preprint]. Zenodo. https://doi.org/xxxx
+> Rosen, C. (2026). *Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes* (Version 1.0.0) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.22168188
 
 **BibTeX Entry:**
 ```bibtex
