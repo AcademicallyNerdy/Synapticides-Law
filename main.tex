@@ -8,8 +8,11 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{needspace}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
@@ -21,6 +24,8 @@
 \\ \small \texttt{Academically.Nerdy@gmail.com} 
 \\ \small ORCID: \href{https://orcid.org/0009-0002-2171-462X}{0009-0002-2171-462X}}
 \date{}
+
+
 
 \begin{document}
 
@@ -50,11 +55,19 @@ Autonomous Agents, AI Security, Systemic Risk, Cyber-Economics, Monte Carlo Simu
 \input{sections/01_intro}
 \input{sections/02_math_model}
 \input{sections/03_axioms}
-\input{sections/04_simulation}
+\input{sections/04_case_studies}
+\input{sections/05_governance}
+\input{sections/06_simulation}
+
+% Flush all floats (figures/tables) before printing the Conclusion
+\clearpage
+\input{sections/07_conclusion}
 
 % =========================================================================
 % BIBLIOGRAPHY SECTION
 % =========================================================================
+\clearpage
+\IEEEtriggeratref{1} % Triggers column break at Reference #1 to balance final page columns
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
