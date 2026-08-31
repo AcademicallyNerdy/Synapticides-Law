@@ -84,17 +84,17 @@ python3 tools/sacl_audit.py --agents 500 --alpha 1.3 --latency 264 --k_cb 0
 If you use, reference, or build upon the *Synapticide's Law* framework or its associated assets in academic literature, software, or media, please cite this work using the following metadata:
 
 **Preferred APA Citation:**
-> Rosen, C. (2026). *Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes* (Version 2.0.0) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.22168188
+> Rosen, C. (2026). *Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes* (Vol: 2026) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.22168188
 
 **BibTeX Entry:**
 ```bibtex
-@article{QCH_Version2_2026,
+@article{CROSEN_SLSACL_2026,
   author       = {[Rosen], [Christi]},
   title        = {{Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes}},
   month        = aug,
   year         = 2026,
+  volume       = 2026,
   publisher    = {Zenodo},
-  version      = {v2.0.0},
   doi          = {10.5281/zenodo.22168188},
   url          = {[https://doi.org/10.5281/zenodo.22168188](https://doi.org/10.5281/zenodo.22168188)}
 }
