@@ -91,7 +91,6 @@ If you use, reference, or build upon the *Synapticide's Law* framework or its as
 @article{CROSEN_SLSACL_2026,
   author       = {[Rosen], [Christi]},
   title        = {{Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes}},
-  month        = aug,
   year         = 2026,
   volume       = 2026,
   publisher    = {Zenodo},
