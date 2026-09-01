@@ -66,8 +66,9 @@ SYNAPTICIDES-LAW-MAIN/
     │   ├── requirements.txt            # Python dependencies (NumPy, SciPy, Matplotlib)
     │   └── sacl_monte_carlo.py         # 10,000-run Monte Carlo loss simulation script
     │
-    └── tools/                          # Command-line audit utilities
-        └── sacl_audit.py               # Lightweight CLI tool for enterprise SMCF™ auditing
+    └── tools/                                # Command-line & interactive cloud audit utilities
+            ├── sacl_audit.py                 # Lightweight CLI tool for enterprise SMCF™ auditing
+            └── colab_sacl_audit_py.ipynb     # Interactive Google Colab notebook for cloud scenario modeling
 ```
 
 ### 🏛️ Enterprise Architecture & GRC Integration
@@ -86,17 +87,17 @@ For CISOs, Enterprise Architects (TOGAF), M&A deal teams, and GRC auditors looki
 ## Quickstart: Enterprise SACL Audit Tools
 
 ### Option 1: Interactive Google Colab Notebook
-Open and run `tools/colab_sacl_audit_py.ipynb` directly in Google Colab to execute interactive scenario modeling, visualize parameter limits, and generate instantaneous SMCF compliance pass/fail audits.
+Open and run `paper/tools/colab_sacl_audit_py.ipynb` directly in Google Colab to execute interactive scenario modeling, visualize parameter limits, and generate instantaneous SMCF compliance pass/fail audits.
 
 ### Option 2: Command-Line Interface (CLI)
 Run the audit calculator locally or inside automated CI/CD pipelines:
 
 ```bash
 # Basic Audit Run
-python3 tools/sacl_audit.py --agents 250 --ops 100 --latency 264 --k_cb 1000000
+python3 paper/tools/sacl_audit.py --agents 250 --ops 100 --latency 264 --k_cb 1000000
 
 # High-Velocity Swarm Simulation (500 Agents, Unmitigated 11-Day Egress Window)
-python3 tools/sacl_audit.py --agents 500 --alpha 1.3 --latency 264 --k_cb 0
+python3 paper/tools/sacl_audit.py --agents 500 --alpha 1.3 --latency 264 --k_cb 0
 ```
 
 ### Option 3: Automated GitHub Actions PR Gate for CI/CD ( Your own Company Repo )
