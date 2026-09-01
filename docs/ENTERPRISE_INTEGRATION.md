@@ -176,7 +176,7 @@ When procuring SaaS platforms or external vendor integrations utilizing autonomo
 Executive Summary: SMCF™ Control Tier Verification
 -------------------------------------------------
 
-To verify that an enterprise system is fully compliant with Synapticide's Law™, GRC auditors should evaluate the architecture against the four SMCF™ tiers, This does not grant SMCF™ certifcation by the Author certification track:
+To verify that an enterprise system is fully compliant with Synapticide's Law™, GRC auditors should evaluate the architecture against the four SMCF™ tiers, This does not grant SMCF™ certifcation by the IP holder certification track:
 
     [ SMCF COMPLIANCE VERIFICATION CHECKLIST ]
     
