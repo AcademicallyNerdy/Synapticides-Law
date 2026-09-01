@@ -103,7 +103,7 @@ python3 paper/tools/sacl_audit.py --agents 500 --alpha 1.3 --latency 264 --k_cb 
 ### Option 3: Automated GitHub Actions PR Gate for CI/CD ( Your own Company Repo )
 
 Enforce **SMCF™ Tier 3** compliance automatically on every Pull Request. 
-1. Clone the latest `tools/cicd/workflow.sacl-policy.yml`, rename `workflow.sacl-policy.yml` to `.sacl-policy.yml`, drop this in your Root/Defined repo directory.
+1. Clone the latest `cicd/workflow.sacl-policy.yml`, rename `workflow.sacl-policy.yml` to `.sacl-policy.yml`, drop this in your Root/Defined repo directory.
 2. Drop `sacl-gate.yml` and `sacl-gate-more.yml` into `.github/workflows/` repo directory, create if it doesn't exist. `sacl-gate-more.yml` gives you more different detailed / error handling gate, you pick your style.
 3. Define execution/permissions as outlined by your company.
 4. Add this as the start of your CI/CD pipeline to block unmitigated agent deployments before they hit production.
