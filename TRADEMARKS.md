@@ -26,7 +26,7 @@ The following marks, phrases, and visual designs are common-law trademarks (™)
 You are free and encouraged to do any of the following without prior written permission:
 - Reference **Synapticide's Law™** or **SACL™** in academic papers, technical documentation, security blog posts, and research presentations.
 - Mention compliance with **SMCF™** guidelines in internal architectural documentation.
-- Link directly to this repository (`https://github.com/AcademicallyNerdy/Synapticides-Law`) or the official Zenodo DOI (`https://doi.org/10.5281/zenodo.22168188`).
+- Link directly to this [GitHub Repository](https://github.com/AcademicallyNerdy/Synapticides-Law) or the official [Zenodo DOI](https://doi.org/10.5281/zenodo.22168188).
 
 ### Restricted (Requires Authorization)
 Unless explicitly authorized in writing by the IP holder, you **may not**:
