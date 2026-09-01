@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-SACL Risk & Circuit-Breaker Audit Calculator (Synapticide's Law v2.0)
-Evaluates autonomous multi-agent swarm deployments for Systemic AI Cascade Loss (SACL)
+SACL Risk & Circuit-Breaker Audit Calculator (Synapticide's Law™)
+Evaluates autonomous multi-agent swarm deployments for Systemic AI Cascade Loss (SACL)™
 and determines mandatory SMCF governance compliance thresholds.
 """
 
@@ -10,7 +10,7 @@ import argparse
 
 def calculate_sacl(m_swarm, alpha_swarm, r_ops, t_notice_hours, k_cb_ops, l_infra, l_model, l_downstream):
     """
-    Computes Systemic AI Cascade Loss (SACL) based on execution velocity,
+    Computes Systemic AI Cascade Loss (SACL)™ based on execution velocity,
     swarm density exponents, asymmetric latency gaps, and circuit breaker caps.
     """
     # 1. Effective Operational Velocity (V_E)
@@ -58,7 +58,7 @@ def calculate_sacl(m_swarm, alpha_swarm, r_ops, t_notice_hours, k_cb_ops, l_infr
 
 def main():
     print("=" * 65)
-    print("  SYNAPTICIDE'S LAW: SACL RISK & GOVERNANCE AUDIT CALCULATOR  ")
+    print("  SYNAPTICIDE'S LAW™: SACL RISK & GOVERNANCE AUDIT CALCULATOR  ")
     print("=" * 65)
 
     parser = argparse.ArgumentParser(description="Audit agent swarm deployments under SACL.")
@@ -96,7 +96,7 @@ def main():
     print(f"    - Breaker Status               : {'TRIPPED (CONTAINED)' if results['cb_triggered'] else 'UNMITIGATED (DANGER)'}")
     print(f"    - Effective Containment Time   : {results['t_effective_sec']:.2f} seconds ({results['t_effective_sec']/3600:.2f} hours)")
 
-    print(f"\n[+] ACTUARIAL LOSS EVALUATION (SACL)")
+    print(f"\n[+] ACTUARIAL LOSS EVALUATION (SACL)™")
     print(f"    - Liability Tensor (L_Tensor)  : ${results['l_tensor_usd']:,.2f} USD")
     print(f"    - ESTIMATED SACL LOSS          : ${results['c_total_millions']:,.2f} MILLION USD")
 

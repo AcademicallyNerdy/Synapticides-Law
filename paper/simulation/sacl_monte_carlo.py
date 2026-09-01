@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Systemic AI Cascade Loss (SACL) & Synapticide's Law
+Systemic AI Cascade Loss (SACL)™ & Synapticide's Law™
 Monte Carlo Engine (10,000 Runs)
 
 Author: Independent Cybernetics & Cosmology Research Group
