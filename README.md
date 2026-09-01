@@ -1,18 +1,22 @@
-# Synapticide's Law: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes
+# Synapticide's Law™: Formalizing Systemic AI Cascade Loss (SACL) Across Autonomous Multi-Agent Threat Regimes
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22168188.svg)](https://doi.org/10.5281/zenodo.22168188)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<p align="center">
+  <img src="[https://githubusercontent.com](https://raw.githubusercontent.com/AcademicallyNerdy/Synapticides-Law/refs/heads/main/branding/synapticideslaw_systemic_ai_cascade_loss_(SACL).png)">
+</p>
+
 This repository contains the official LaTeX manuscript, mathematical proofs, and Python Monte Carlo simulation engine for **Synapticide's Law** and the **Systemic AI Cascade Loss (SACL)** framework.
 
-To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cyber due diligence, this repository includes two operational implementation tools for calculating Systemic AI Cascade Loss ($`\text{SACL}`$) and verifying compliance against the **Synapticide Maturity & Containment Framework (SMCF)**:
+To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cyber due diligence, this repository includes two operational implementation tools for calculating Systemic AI Cascade Loss ($`\text{SACL}`$) and verifying compliance against the **Synapticide Maturity & Containment Framework (SMCF)™**:
 
 - **`tools/sacl_audit.py` (CLI Utility):** A lightweight, zero-dependency command-line Python script designed for integration into DevOps pipelines, CI/CD security checks, and automated risk auditing workflows.
 - **`tools/colab_sacl_audit_py.ipynb` (Interactive Notebook):** A ready-to-run Google Colab notebook providing an interactive environment for CISOs, enterprise architects, and actuarial underwriters to model custom multi-agent swarm parameters, simulate velocity thresholds, and generate formal SMCF compliance reports without requiring local Python environments.
 
 ## Abstract
-As cybersecurity threats transition from static credential vulnerabilities to machine-speed autonomous Large Language Model (LLM) agent swarms, traditional single-entity risk frameworks (such as FAIR and ISO 27005) fail to model multi-sided, cross-platform financial destruction. We establish **Synapticide's Law**, a fundamental theorem governing machine-speed cognitive network collapse, and introduce the **Systemic AI Cascade Loss (SACL)** mathematical model.
+As cybersecurity threats transition from static credential vulnerabilities to machine-speed autonomous Large Language Model (LLM) agent swarms, traditional single-entity risk frameworks (such as FAIR and ISO 27005) fail to model multi-sided, cross-platform financial destruction. We establish **Synapticide's Law™**, a fundamental theorem governing machine-speed cognitive network collapse, and introduce the **Systemic AI Cascade Loss (SACL)™** mathematical model.
 
 ## Repository Structure
 ```text
@@ -69,7 +73,17 @@ python3 tools/sacl_audit.py --agents 250 --ops 100 --latency 264 --k_cb 1000000
 python3 tools/sacl_audit.py --agents 500 --alpha 1.3 --latency 264 --k_cb 0
 ```
 
-## License & Intellectual Property
+## License, Intellectual Property & Trademark Notice
+
+The **Synapticide's Law™** and **Systemic AI Cascade Loss (SACL)™** open-source software and manuscript are licensed under the MIT License. 
+
+However, all associated brand identifiers—including but not limited to:
+- The names **Synapticide's Law™**, **Systemic AI Cascade Loss (SACL)™**, and **Synapticide Maturity & Containment Framework (SMCF)™**
+- The tagline *"Machine-speed autonomy requires machine-speed governance."™*
+- All official certification badges, logos, seals, and compliance audit mark graphics
+...are the exclusive Intellectual Property and Trademarks of the author. 
+
+**Grant of License does not include rights to use these trademarks for commercial certification.** No entity may issue, display, or sell "SMCF Certified," "SACL Approved," or "Synapticide Compliant" designations without express written authorization and formal certification from the IP holder.
 
 - **Manuscript, Figures, Vectors & Theoretical Framework:**  
   Copyright © 2026. Distributed under the [Creative Commons Attribution 4.0 International License (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to share, copy, and adapt this material in any medium or format, provided appropriate academic credit is given, a link to the license is provided, and any changes are clearly indicated. (LICENSE-CC)
