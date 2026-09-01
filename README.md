@@ -23,7 +23,7 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 ├── paper/                  # Overleaf LaTeX manuscript source files
 │   ├── main.tex
 │   ├── references.bib
-│   ├── branding/               # Branding / Trademark related files
+│   ├── branding/           # Branding / Trademark related files
 │   ├── docs/               # How-To
 │   │   └── ENTERPRISE_INTEGRATION.md
 │   ├── figures/
@@ -84,7 +84,7 @@ However, all associated brand identifiers—including but not limited to:
 - All official certification badges, logos, seals, and compliance audit mark graphics
 ...are the exclusive Intellectual Property and Trademarks of the author. 
 
-**Grant of License does not include rights to use these trademarks for commercial certification.** No entity may issue, display, or sell "SMCF Certified," "SACL Approved," or "Synapticide Compliant" designations without express written authorization and formal certification from the IP holder.
+**Grant of License does not include rights to use these trademarks for commercial certification.** No entity may issue, display, or sell "SMCF Certified," "SACL Approved," or "Synapticide Compliant" designations without express written authorization and formal certification from the IP holder. See **TRADEMARKS.md** for full usage terms.
 
 - **Manuscript, Figures, Vectors & Theoretical Framework:**  
   Copyright © 2026. Distributed under the [Creative Commons Attribution 4.0 International License (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You are free to share, copy, and adapt this material in any medium or format, provided appropriate academic credit is given, a link to the license is provided, and any changes are clearly indicated. (LICENSE-CC)
