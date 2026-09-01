@@ -18,38 +18,56 @@ To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cy
 ## Abstract
 As cybersecurity threats transition from static credential vulnerabilities to machine-speed autonomous Large Language Model (LLM) agent swarms, traditional single-entity risk frameworks (such as FAIR and ISO 27005) fail to model multi-sided, cross-platform financial destruction. We establish **Synapticide's Law™**, a fundamental theorem governing machine-speed cognitive network collapse, and introduce the **Systemic AI Cascade Loss (SACL)™** mathematical model.
 
-## Repository Structure - _work-in-progress_
+## Repository Structure
 ```text
-├── paper/                  # Overleaf LaTeX manuscript source files
-│   ├── main.tex
-│   ├── references.bib
-│   ├── branding/           # Branding / Trademark related files
-│   ├── docs/               # How-To
-│   │   ├── Synapticide Executive Board Briefing.pdf
-│   │   └── ENTERPRISE_INTEGRATION.md
-│   ├── figures/
-│   │   └── case_study_comparative.tex
-│   └── sections/
-│       ├── 01_intro.tex
-│       ├── 02_math_model.tex
-│       ├── 03_axioms.tex
-│       ├── 04_case_studies.tex
-│       ├── 05_governance.tex
-│       ├── 06_simulation.tex
-│       └── 07_conclusion.tex
-├── simulation/             # Python Monte Carlo simulation engine
-│   ├── sacl_monte_carlo.py
-│   └── requirements.txt
-├── tools/                  # Interactive audit utilities & notebooks
-│   ├── sacl_audit.py
-│   ├── colab_sacl_audit_py.ipynb
-│   └── cicd/               # CI / CD Pipeline automation examples
-│       ├── sacl-gate.yml
-│       ├── sacl-gate-more.yml
-│       └── workflow.sacl-policy.yml
-├── LICENSE
-├── LICENSE-CC
-└── README.md
+SYNAPTICIDES-LAW-MAIN/
+├── .gitignore                          # Standard git exclusion rules
+├── 00_Synapticides_Law_SACL.pdf        # Compiled release PDF of the research manuscript
+├── CITATION.cff                        # Machine-readable GitHub citation metadata (APA/BibTeX)
+├── LICENSE                             # Open-source software license (MIT)
+├── LICENSE-CC                          # Documentation & paper license (CC-BY 4.0)
+├── README.md                           # Master repository documentation & getting started guide
+├── TRADEMARKS.md                       # Brand usage guidelines, IP protection & trademark policy
+│
+├── branding/                           # Brand assets, lockups, and high-res vector logos
+│   ├── synapticideslaw_systemic_ai_cascade_loss_(SACL).png  # Primary branding lockup with tagline
+│   ├── synapticides_law_3d_color_logo.png                   # High-res 3D color delta mark
+│   └── synapticides_law_flat_bw_logo.png                    # Flat monochrome variant
+│
+├── cicd/                               # Continuous Integration & Automated PR Security Gate Templates
+│   ├── sacl_gate.yml                   # Standard GitHub Action workflow template
+│   ├── sacl_gate_more.yml              # Extended multi-environment pipeline template
+│   └── workflow.sacl-policy.yml        # Default SMCF™ policy configuration schema
+│
+├── docs/                               # Governance Blueprint, Board Briefing & Journal Docs
+│   ├── COVER_LETTER.md                 # IEEE Transactions on Technology & Society cover letter
+│   ├── ENTERPRISE_INTEGRATION.md       # TOGAF, NIST CSF 2.0, ISO 27001 & M&A integration guide
+│   └── Synapticide Executive Board Briefing.pdf # 4-page CISO & Board Executive Presentation Deck
+│
+└── paper/                              # Overleaf LaTeX source files, simulation & audit tools
+    ├── main.tex                        # Primary LaTeX document entry point
+    ├── references.bib                  # Academic BibTeX citations database
+    │
+    ├── figures/                        # Manuscript diagrams, TikZ vectors & simulation plots
+    │   ├── case_study_comparative.tex  # TikZ source for case study comparison graph
+    │   ├── density_plot.png            # Probability density distribution of swarm losses
+    │   └── lec_curve.png               # Loss Exceedance Curve (LEC) Monte Carlo plot
+    │
+    ├── sections/                       # Modular LaTeX manuscript chapters (01-07)
+    │   ├── 01_intro.tex                # Introduction & problem formulation
+    │   ├── 02_math_model.tex           # Mathematical formalization of SACL™ & VaR_95%
+    │   ├── 03_axioms.tex               # Theoretical axioms governing cognitive collapse
+    │   ├── 04_case_studies.tex          # Comparative empirical case study analyses
+    │   ├── 05_governance.tex           # Governance frameworks & SMCF™ tier definitions
+    │   ├── 06_simulation.tex           # Monte Carlo validation & experimental results
+    │   └── 07_conclusion.tex           # Strategic conclusions & future research vector
+    │
+    ├── simulation/                     # Quantitative research computational engine
+    │   ├── requirements.txt            # Python dependencies (NumPy, SciPy, Matplotlib)
+    │   └── sacl_monte_carlo.py         # 10,000-run Monte Carlo loss simulation script
+    │
+    └── tools/                          # Command-line audit utilities
+        └── sacl_audit.py               # Lightweight CLI tool for enterprise SMCF™ auditing
 ```
 
 ### 🏛️ Enterprise Architecture & GRC Integration
