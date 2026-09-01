@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-  <img src="[https://githubusercontent.com](https://raw.githubusercontent.com/AcademicallyNerdy/Synapticides-Law/refs/heads/main/branding/synapticideslaw_systemic_ai_cascade_loss_(SACL).png)">
+  <img src="https://raw.githubusercontent.com/AcademicallyNerdy/Synapticides-Law/refs/heads/main/branding/synapticideslaw_systemic_ai_cascade_loss_(SACL).png" alt="Synapticide's Law™ / SACL™ Branding Lockup" width="100%">
 </p>
 
-This repository contains the official LaTeX manuscript, mathematical proofs, and Python Monte Carlo simulation engine for **Synapticide's Law** and the **Systemic AI Cascade Loss (SACL)** framework.
+This repository contains the official LaTeX manuscript, mathematical proofs, and Python Monte Carlo simulation engine for **Synapticide's Law™** and the **Systemic AI Cascade Loss (SACL)™** framework.
 
 To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cyber due diligence, this repository includes two operational implementation tools for calculating Systemic AI Cascade Loss ($`\text{SACL}`$) and verifying compliance against the **Synapticide Maturity & Containment Framework (SMCF)™**:
 
@@ -23,6 +23,7 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 ├── paper/                  # Overleaf LaTeX manuscript source files
 │   ├── main.tex
 │   ├── references.bib
+│   ├── branding/               # Branding / Trademark related files
 │   ├── docs/               # How-To
 │   │   └── ENTERPRISE_INTEGRATION.md
 │   ├── figures/
