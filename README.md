@@ -29,35 +29,35 @@ SYNAPTICIDES-LAW-MAIN/
 ├── README.md                           # Master repository documentation & getting started guide
 ├── TRADEMARKS.md                       # Brand usage guidelines, IP protection & trademark policy
 │
-├── branding/                           # Brand assets, lockups, and high-res vector logos
-│   ├── synapticideslaw_systemic_ai_cascade_loss_(SACL).png  # Primary branding lockup with tagline
-│   ├── synapticides_law_3d_color_logo.png                   # High-res 3D color delta mark
-│   └── synapticides_law_flat_bw_logo.png                    # Flat monochrome variant
+├── branding/                                                  # Brand assets, lockups, and high-res vector logos
+│   ├── synapticideslaw_systemic_ai_cascade_loss_(SACL).png    # Primary branding lockup with tagline
+│   ├── synapticides_law_3d_color_logo.png                     # High-res 3D color delta mark
+│   └── synapticides_law_flat_bw_logo.png                      # Flat monochrome variant
 │
 ├── cicd/                               # Continuous Integration & Automated PR Security Gate Templates
 │   ├── sacl_gate.yml                   # Standard GitHub Action workflow template
 │   ├── sacl_gate_more.yml              # Extended multi-environment pipeline template
 │   └── workflow.sacl-policy.yml        # Default SMCF™ policy configuration schema
 │
-├── docs/                               # Governance Blueprint, Board Briefing & Journal Docs
-│   ├── COVER_LETTER.md                 # IEEE Transactions on Technology & Society cover letter
-│   ├── ENTERPRISE_INTEGRATION.md       # TOGAF, NIST CSF 2.0, ISO 27001 & M&A integration guide
-│   └── Synapticide Executive Board Briefing.pdf # 4-page CISO & Board Executive Presentation Deck
+├── docs/                                             # Governance Blueprint, Board Briefing & Journal Docs
+│   ├── COVER_LETTER.md                               # IEEE Transactions on Technology & Society cover letter
+│   ├── ENTERPRISE_INTEGRATION.md                     # TOGAF, NIST CSF 2.0, ISO 27001 & M&A integration guide
+│   └── Synapticide Executive Board Briefing.pdf      # 4-page CISO & Board Executive Presentation Deck
 │
 └── paper/                              # Overleaf LaTeX source files, simulation & audit tools
     ├── main.tex                        # Primary LaTeX document entry point
     ├── references.bib                  # Academic BibTeX citations database
     │
-    ├── figures/                        # Manuscript diagrams, TikZ vectors & simulation plots
-    │   ├── case_study_comparative.tex  # TikZ source for case study comparison graph
-    │   ├── density_plot.png            # Probability density distribution of swarm losses
-    │   └── lec_curve.png               # Loss Exceedance Curve (LEC) Monte Carlo plot
+    ├── figures/                          # Manuscript diagrams, TikZ vectors & simulation plots
+    │   ├── case_study_comparative.tex    # TikZ source for case study comparison graph
+    │   ├── density_plot.png              # Probability density distribution of swarm losses
+    │   └── lec_curve.png                 # Loss Exceedance Curve (LEC) Monte Carlo plot
     │
     ├── sections/                       # Modular LaTeX manuscript chapters (01-07)
     │   ├── 01_intro.tex                # Introduction & problem formulation
     │   ├── 02_math_model.tex           # Mathematical formalization of SACL™ & VaR_95%
     │   ├── 03_axioms.tex               # Theoretical axioms governing cognitive collapse
-    │   ├── 04_case_studies.tex          # Comparative empirical case study analyses
+    │   ├── 04_case_studies.tex         # Comparative empirical case study analyses
     │   ├── 05_governance.tex           # Governance frameworks & SMCF™ tier definitions
     │   ├── 06_simulation.tex           # Monte Carlo validation & experimental results
     │   └── 07_conclusion.tex           # Strategic conclusions & future research vector
