@@ -18,13 +18,14 @@ To facilitate immediate enterprise adoption, corporate risk auditing, and M&A cy
 ## Abstract
 As cybersecurity threats transition from static credential vulnerabilities to machine-speed autonomous Large Language Model (LLM) agent swarms, traditional single-entity risk frameworks (such as FAIR and ISO 27005) fail to model multi-sided, cross-platform financial destruction. We establish **Synapticide's Law™**, a fundamental theorem governing machine-speed cognitive network collapse, and introduce the **Systemic AI Cascade Loss (SACL)™** mathematical model.
 
-## Repository Structure
+## Repository Structure - _work-in-progress_
 ```text
 ├── paper/                  # Overleaf LaTeX manuscript source files
 │   ├── main.tex
 │   ├── references.bib
 │   ├── branding/           # Branding / Trademark related files
 │   ├── docs/               # How-To
+│   │   ├── Synapticide Executive Board Briefing.pdf
 │   │   └── ENTERPRISE_INTEGRATION.md
 │   ├── figures/
 │   │   └── case_study_comparative.tex
@@ -47,6 +48,7 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 │       ├── sacl-gate-more.yml
 │       └── workflow.sacl-policy.yml
 ├── LICENSE
+├── LICENSE-CC
 └── README.md
 ```
 
