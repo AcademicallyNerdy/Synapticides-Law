@@ -1,12 +1,12 @@
 Enterprise Architecture & GRC Integration Guide
 
-Synapticide's Law & SACL Framework: Enterprise Architecture & GRC Integration Guide
+Synapticide's Law™ & SACL™ Framework: Enterprise Architecture & GRC Integration Guide
 ===================================================================================
 
 Executive Overview
 ------------------
 
-As autonomous multi-agent systems (_M_swarm > 1) transition from supervised tasks to high-velocity operational environments, traditional qualitative risk frameworks fail to bound machine-speed exposure. **Synapticide's Law** and the **Systemic AI Cascade Loss (SACL)** model provide the quantitative foundation required to govern agentic architectures.
+As autonomous multi-agent systems (_M_swarm > 1) transition from supervised tasks to high-velocity operational environments, traditional qualitative risk frameworks fail to bound machine-speed exposure. **Synapticide's Law™** and the **Systemic AI Cascade Loss (SACL)™** model provide the quantitative foundation required to govern agentic architectures.
 
 This guide details the operational injection of SACL into two core enterprise management tracks:
 
@@ -173,10 +173,10 @@ When procuring SaaS platforms or external vendor integrations utilizing autonomo
 
 * * *
 
-Executive Summary: SMCF Control Tier Verification
+Executive Summary: SMCF™ Control Tier Verification
 -------------------------------------------------
 
-To verify that an enterprise system is fully compliant with Synapticide's Law, GRC auditors should evaluate the architecture against the four SMCF tiers:
+To verify that an enterprise system is fully compliant with Synapticide's Law™, GRC auditors should evaluate the architecture against the four SMCF™ tiers, This does not grant SMCF™ certifcation by the Author certification track:
 
     [ SMCF COMPLIANCE VERIFICATION CHECKLIST ]
     
