@@ -55,6 +55,7 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 For CISOs, Enterprise Architects (TOGAF), M&A deal teams, and GRC auditors looking to operationalize Synapticide's Law within established corporate governance and security frameworks, see our detailed blueprint:
 
 👉 **[Enterprise Architecture & GRC Integration Guide](docs/ENTERPRISE_INTEGRATION.md)**
+🛡️ **[Executive Deck for Investors, Board Members & C-Suite](docs/Synapticide%20Executive%20Board%20Briefing.pdf)**
 
 #### Key Integration Highlights:
 - **TOGAF Phase G & ARB Gates:** Gating CapEx approvals for agent swarms $`M_{\text{swarm}} > 1`$ using quantitative $`\text{VaR}_{95\%}`$ thresholds and $`K_{\text{cb}}`$ circuit breaker verifications.
