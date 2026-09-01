@@ -1,0 +1,74 @@
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+% Package Imports for Academic Standards
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+% --- Title ---
+\title{\textbf{ Synapticide's Law™: Formalizing Systemic AI Cascade Loss (SACL)™ Across Autonomous Multi-Agent Threat Regimes }}
+\author{\textbf{By Christi Rosen}
+\\ \small Independent Cybernetics \& Cosmology Research Group 
+\\ \small \texttt{Academically.Nerdy@gmail.com} 
+\\ \small ORCID: \href{https://orcid.org/0009-0002-2171-462X}{0009-0002-2171-462X}}
+\date{}
+
+
+
+\begin{document}
+
+% Paper Title
+\maketitle
+
+% Header Markings
+\markboth{Preprint Archived via Zenodo \& GitHub~--~August 2026}%
+{Author \MakeLowercase{\textit{et al.}}: Synapticide's Law and SACL Framework}
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+As cybersecurity threats transition from static credential vulnerabilities to machine-speed autonomous Large Language Model (LLM) agent swarms, traditional single-entity risk frameworks (such as FAIR and ISO 27005) fail to model multi-sided, cross-platform financial destruction. In this paper, we establish \textbf{Synapticide's Law}, a fundamental theorem governing machine-speed cognitive network collapse, and introduce the \textbf{Systemic AI Cascade Loss (SACL)} mathematical model. We categorize cyber-adversarial dynamics across three evolutionary regimes: Human-vs-Human ($H \to H$), Human-vs-AI ($H \to A$), and AI-vs-AI ($A \to A$). By formalizing temporal decay parameters ($\Phi(t)$), discrete automated circuit breakers ($K_{\text{cb}}$), and swarm coordination density exponents ($\alpha_{\text{swarm}}$), we provide a closed-form integration for ecosystem loss. To validate our model, we executed a 10,000-run Monte Carlo simulation incorporating empirical baseline parameters. Our empirical results demonstrate heavy-tailed Power-Law dynamics: while the median breach loss yields \$258.24M USD, the 95th-percentile tail risk ($Value\text{-}at\text{-}Risk_{95\%}$) escalates to \$61.18B USD. This work establishes that machine-speed execution eliminates human-in-the-loop containment buffers, shifting loss dynamics from extortion payouts to algorithmic compute destruction, model retraining, and systemic B2B supply chain failure.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Autonomous Agents, AI Security, Systemic Risk, Cyber-Economics, Monte Carlo Simulation, Synapticide's Law, Swarm Intelligence, Reward Hacking.
+\end{IEEEkeywords}}
+
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+% =========================================================================
+% MODULAR SECTION IMPORTS
+% =========================================================================
+\input{sections/01_intro}
+\input{sections/02_math_model}
+\input{sections/03_axioms}
+\input{sections/04_case_studies}
+\input{sections/05_governance}
+\input{sections/06_simulation}
+
+% Flush all floats (figures/tables) before printing the Conclusion
+\clearpage
+\input{sections/07_conclusion}
+
+% =========================================================================
+% BIBLIOGRAPHY SECTION
+% =========================================================================
+\clearpage
+\IEEEtriggeratref{1} % Triggers column break at Reference #1 to balance final page columns
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
