@@ -41,7 +41,11 @@ As cybersecurity threats transition from static credential vulnerabilities to ma
 │   └── requirements.txt
 ├── tools/                  # Interactive audit utilities & notebooks
 │   ├── sacl_audit.py
-│   └── colab_sacl_audit_py.ipynb
+│   ├── colab_sacl_audit_py.ipynb
+│   └── cicd/               # CI / CD Pipeline automation examples
+│       ├── sacl-gate.yml
+│       ├── sacl-gate-more.yml
+│       └── workflow.sacl-policy.yml
 ├── LICENSE
 └── README.md
 ```
