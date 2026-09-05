@@ -42,8 +42,16 @@ jobs:
           
           # 2. Authenticate completely in system memory (Zero temporary files)
           info = json.loads(os.environ['GDRIVE_JSON'])
+
+          decoded_secret = decoded_bytes.decode('utf-8')
+          decoded = json.loads(decoded_secret)
+          print(f"Number of items in decoded: {len(decoded)}")
+
+          SCOPES = ['https://googleapis.com']
+          
           creds = service_account.Credentials.from_service_account_info(
-              info, scopes=['https://googleapis.com','https://www.googleapis.com/auth/cloud-platform','https://www.googleapis.com/auth/drive']
+              decoded,
+              scopes=SCOPES
           )
           creds.refresh(Request())
           print("Successfully Refreshed!")
