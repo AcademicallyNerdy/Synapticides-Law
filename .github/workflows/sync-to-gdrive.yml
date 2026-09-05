@@ -3,7 +3,7 @@ name: Secure Filtered Google Drive Sync
 on:
   push:
     branches:
-      - main # Change this to your exact branch name if you aren't using 'main'
+      - main
 
 jobs:
   sync:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # Upgraded to 3.11 to clear the warning!
+          python-version: '3.11'
 
       - name: Install Google API Client
         run: |
@@ -23,14 +23,11 @@ jobs:
 
       - name: Execute Filtered Cloud Sync
         env:
-          # 1. CHANGE THIS: Paste your long Google Drive target folder ID between the quotes
-          DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6TdMZ"
-          # 2. CHANGE THIS: List only the explicit file extensions your GEM Agent needs
+          GDRIVE_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+          # 1. Double check your long folder ID here:
+          DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6RdMZ"
           ALLOWED_EXTENSIONS: ".md,.txt,.json,.pdf,.tex,.cff,.png,.bib,.py,.ipynb"
         run: |
-          # Safely dump the repo secret directly into a local temp file inside the runner
-          echo '${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}' > temp_creds.json
-
           cat << 'EOF' > sync_script.py
           import os
           import json
@@ -42,14 +39,13 @@ jobs:
           allowed_exts = tuple(os.environ['ALLOWED_EXTENSIONS'].split(','))
           root_folder_id = os.environ['DRIVE_FOLDER_ID']
           
-          # 2. Authenticate cleanly using the secure temp file
-          with open('temp_creds.json', 'r') as f:
-              info = json.load(f)
-
+          # 2. Authenticate completely in system memory (Zero temporary files)
+          info = json.loads(os.environ['GDRIVE_JSON'])
           creds = service_account.Credentials.from_service_account_info(
               info, scopes=['https://googleapis.com']
           )
           drive_service = build('drive', 'v3', credentials=creds)
+          print("Successfully authenticated with Google Drive!")
 
           # Helper to manage remote Drive folders synchronously to prevent duplicates
           def get_or_create_drive_folder(name, parent_id):
@@ -112,6 +108,4 @@ jobs:
                       upload_or_update_file(local_file_path, file, current_parent_id)
 
           EOF
-          python sync_script.py          
-          # Clean up the file immediately after running for max security
-          rm -f temp_creds.json
+          python sync_script.py
