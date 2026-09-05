@@ -42,7 +42,8 @@ jobs:
           root_folder_id = ${{ env.DRIVE_FOLDER_ID }}
           EOF
 
-          print("Rclone profile cleanly mapped in system memory!")
+          # Fixed: Changed "print" to "echo" for native bash shell compatibility
+          echo "Rclone profile cleanly mapped in system memory!"
 
           # 3. RUN NATIVE CLOUD SYNC WITH PRECISE EXTENSION WHITELISTING
           rclone sync . gdrive: \
