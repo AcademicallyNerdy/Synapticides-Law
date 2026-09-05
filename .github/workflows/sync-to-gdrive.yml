@@ -41,18 +41,23 @@ jobs:
           root_folder_id = os.environ['DRIVE_FOLDER_ID']
           
           # 2. Authenticate completely in system memory (Zero temporary files)
-          info = json.loads(os.environ['GDRIVE_JSON'])
-
-          decoded_secret = decoded_bytes.decode('utf-8')
-          decoded = json.loads(decoded_secret)
-          print(f"Number of items in decoded: {len(decoded)}")
-
-          SCOPES = ['https://googleapis.com']
+          base64_str = os.environ['GDRIVE_JSON']
           
+          # Decode the base64 string back into standard text bytes, then decode to UTF-8
+          decoded_bytes = base64.b64decode(base64_str)
+          decoded_secret = decoded_bytes.decode('utf-8')
+          
+          # NOW it is safe to parse it as JSON
+          decoded = json.loads(decoded_secret)
+          
+          print(f"Number of items in decoded: {len(decoded)}")
+          
+          # Note: Use the full Google Drive scope if you are interacting with Drive files
+          SCOPES = ['https://googleapis.com'] 
           creds = service_account.Credentials.from_service_account_info(
-              decoded,
-              scopes=SCOPES
+              decoded, scopes=SCOPES
           )
+          
           creds.refresh(Request())
           print("Successfully Refreshed!")
           
