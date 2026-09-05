@@ -22,26 +22,29 @@ jobs:
           GDRIVE_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
           DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6RdMZ" # Replace with your real folder ID
         run: |
-          # 1. RUN YOUR EXACT WORKING BASE64 DECODER AND STREAM TO RCLONE CONFIG
-          python -c '
+          # 1. RUN YOUR EXACT WORKING BASE64 DECODER INTO AN ENVIRONMENT VARIABLE
+          RAW_CLEAN_JSON=$(python3 -c '
           import os, base64, json
           base64_str = os.environ["GDRIVE_JSON"]
           decoded_bytes = base64.b64decode(base64_str)
           decoded_secret = decoded_bytes.decode("utf-8")
-          
-          # Verify structure is active
           decoded = json.loads(decoded_secret)
-          print(f"Number of items in decoded: {len(decoded)}")
-          
-          # Safely pipe the raw JSON directly to the rclone service account profile string
-          os.makedirs(os.path.expanduser("~/.config/rclone"), exist_ok=True)
-          with open(os.path.expanduser("~/.config/rclone/rclone.conf"), "w") as f:
-              f.write(f"[gdrive]\ntype = drive\nscope = drive\nservice_account_credentials = {json.dumps(decoded_secret)}\nroot_folder_id = {os.environ[\"DRIVE_FOLDER_ID\"]}\n")
-          print("Rclone profile cleanly mapped in system memory!")
-          '
+          print(json.dumps(decoded))
+          ')
 
-          # 2. RUN NATIVE CLOUD SYNC WITH PRECISE EXTENSION WHITELISTING
-          # Replicates nested folder architecture instantly while honoring file filters
+          # 2. WRITE TO THE RCLONE CONFIG PROFILE (Zero inline Python escaping problems)
+          mkdir -p ~/.config/rclone
+          cat << EOF > ~/.config/rclone/rclone.conf
+          [gdrive]
+          type = drive
+          scope = drive
+          service_account_credentials = $RAW_CLEAN_JSON
+          root_folder_id = ${{ env.DRIVE_FOLDER_ID }}
+          EOF
+
+          print("Rclone profile cleanly mapped in system memory!")
+
+          # 3. RUN NATIVE CLOUD SYNC WITH PRECISE EXTENSION WHITELISTING
           rclone sync . gdrive: \
             --include "*.md" \
             --include "*.txt" \
@@ -58,6 +61,6 @@ jobs:
             --drive-use-trash=false \
             --verbose
 
-          # 3. PURGE THE ACTIVE PROFILE CONFIG FROM MEMORY DISK IMMEDIATELY
+          # 4. PURGE THE ACTIVE PROFILE CONFIG FROM MEMORY DISK IMMEDIATELY
           rm -rf ~/.config/rclone
-          print("Automation complete. Security profiles shredded.")
+          echo "Automation complete. Security profiles shredded."
