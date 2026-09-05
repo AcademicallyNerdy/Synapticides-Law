@@ -43,7 +43,7 @@ jobs:
           # 2. Authenticate completely in system memory (Zero temporary files)
           info = json.loads(os.environ['GDRIVE_JSON'])
           creds = service_account.Credentials.from_service_account_info(
-              info, scopes=['https://googleapis.com']
+              info, scopes=['https://googleapis.com','https://www.googleapis.com/auth/cloud-platform','https://www.googleapis.com/auth/drive']
           )
           creds.refresh(Request())
           print("Successfully Refreshed!")
