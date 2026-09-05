@@ -32,7 +32,7 @@ jobs:
           print(json.dumps(decoded))
           ')
 
-          # 2. WRITE TO THE RCLONE CONFIG PROFILE (Zero inline Python escaping problems)
+          # 2. WRITE TO THE RCLONE CONFIG PROFILE
           mkdir -p ~/.config/rclone
           cat << EOF > ~/.config/rclone/rclone.conf
           [gdrive]
@@ -42,10 +42,9 @@ jobs:
           root_folder_id = ${{ env.DRIVE_FOLDER_ID }}
           EOF
 
-          # Fixed: Changed "print" to "echo" for native bash shell compatibility
           echo "Rclone profile cleanly mapped in system memory!"
 
-          # 3. RUN NATIVE CLOUD SYNC WITH PRECISE EXTENSION WHITELISTING
+          # 3. RUN NATIVE CLOUD SYNC WITH EXPLICIT OWNER POOL ROUTING
           rclone sync . gdrive: \
             --include "*.md" \
             --include "*.txt" \
@@ -59,6 +58,9 @@ jobs:
             --include "*.ipynb" \
             --exclude ".git/**" \
             --exclude ".github/**" \
+            --drive-upload-cutoff 0 \
+            --drive-acknowledge-abuse \
+            --drive-keep-revision-forever=false \
             --drive-use-trash=false \
             --verbose
 
