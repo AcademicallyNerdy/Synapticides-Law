@@ -32,6 +32,7 @@ jobs:
           import os
           import json
           import base64
+          import io
           from google.oauth2 import service_account
           from googleapiclient.discovery import build
           from googleapiclient.http import MediaFileUpload
@@ -73,7 +74,7 @@ jobs:
               results = drive_service.files().list(q=query, fields="files(id)", supportsAllDrives=True, includeItemsFromAllDrives=True).execute()
               files = results.get('files', [])
               if files:
-                  return files[0]['id'] # Added array selector fix
+                  return files[0]['id']
               
               folder_metadata = {
                   'name': name,
@@ -93,11 +94,13 @@ jobs:
               with open(local_path, 'rb') as f:
                   file_bytes = f.read()
               
-              media = MediaInMemoryUpload(file_bytes, mimetype='application/octet-stream')
+              # Fixed: Using standard non-deprecated memory stream wrapper
+              fh = io.BytesIO(file_bytes)
+              media = MediaIoBaseUpload(fh, mimetype='application/octet-stream', resumable=False)
               
               if files:
                   # File exists, perform an explicit targeted update
-                  file_id = files[0]['id'] # Added array selector fix
+                  file_id = files[0]['id']
                   drive_service.files().update(fileId=file_id, media_body=media, supportsAllDrives=True).execute()
                   print(f"Updated: {filename}")
               else:
