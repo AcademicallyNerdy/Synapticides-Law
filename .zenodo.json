@@ -1,0 +1,7 @@
+{
+  "ignored_files": [
+    ".github/*",
+    ".github/workflows/*",
+    ".github/workflows/sync-to-gdrive.yml"
+  ]
+}
