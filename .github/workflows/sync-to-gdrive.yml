@@ -46,6 +46,8 @@ jobs:
               info, scopes=['https://googleapis.com']
           )
           creds.refresh(Request())
+          print("Successfully Refreshed!")
+          
           drive_service = build('drive', 'v3', credentials=creds)
           print("Successfully authenticated with Google Drive!")
 
