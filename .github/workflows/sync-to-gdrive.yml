@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11' # Upgraded to 3.11 to clear the warning!
 
       - name: Install Google API Client
         run: |
@@ -23,12 +23,14 @@ jobs:
 
       - name: Execute Filtered Cloud Sync
         env:
-          GDRIVE_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
           # 1. CHANGE THIS: Paste your long Google Drive target folder ID between the quotes
-          DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6RdMZ"
+          DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6TdMZ"
           # 2. CHANGE THIS: List only the explicit file extensions your GEM Agent needs
           ALLOWED_EXTENSIONS: ".md,.txt,.json,.pdf,.tex,.cff,.png,.bib,.py,.ipynb"
         run: |
+          # Safely dump the repo secret directly into a local temp file inside the runner
+          echo '${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}' > temp_creds.json
+
           cat << 'EOF' > sync_script.py
           import os
           import json
@@ -40,8 +42,10 @@ jobs:
           allowed_exts = tuple(os.environ['ALLOWED_EXTENSIONS'].split(','))
           root_folder_id = os.environ['DRIVE_FOLDER_ID']
           
-          # 2. Authenticate cleanly using GitHub Secrets
-          info = json.loads(os.environ['GDRIVE_JSON'])
+          # 2. Authenticate cleanly using the secure temp file
+          with open('temp_creds.json', 'r') as f:
+              info = json.load(f)
+
           creds = service_account.Credentials.from_service_account_info(
               info, scopes=['https://googleapis.com']
           )
@@ -108,4 +112,6 @@ jobs:
                       upload_or_update_file(local_file_path, file, current_parent_id)
 
           EOF
-          python sync_script.py
+          python sync_script.py          
+          # Clean up the file immediately after running for max security
+          rm -f temp_creds.json
