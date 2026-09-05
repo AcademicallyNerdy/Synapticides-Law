@@ -1,0 +1,112 @@
+name: Secure Filtered Google Drive Sync
+
+on:
+  push:
+    branches:
+      - main # Change this to your exact branch name if you aren't using 'main'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Google API Client
+        run: |
+          pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+      - name: Execute Filtered Cloud Sync
+        env:
+          GDRIVE_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+          # 1. CHANGE THIS: Paste your long Google Drive target folder ID between the quotes
+          DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6RdMZ"
+          # 2. CHANGE THIS: List only the explicit file extensions your GEM Agent needs
+          ALLOWED_EXTENSIONS: ".md,.txt,.json,.pdf,.tex,.cff,.png,.bib,.py,.ipynb"
+
+        run: |
+          cat << 'EOF' > sync_script.py
+          import os
+          import json
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+          from googleapiclient.http import MediaFileUpload
+
+          # 1. Parse Environments
+          allowed_exts = tuple(os.environ['ALLOWED_EXTENSIONS'].split(','))
+          root_folder_id = os.environ['DRIVE_FOLDER_ID']
+          
+          # 2. Authenticate cleanly using GitHub Secrets
+          info = json.loads(os.environ['GDRIVE_JSON'])
+          creds = service_account.Credentials.from_service_account_info(
+              info, scopes=['https://googleapis.com']
+          )
+          drive_service = build('drive', 'v3', credentials=creds)
+
+          # Helper to manage remote Drive folders synchronously to prevent duplicates
+          def get_or_create_drive_folder(name, parent_id):
+              query = f"name='{name}' and '{parent_id}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
+              results = drive_service.files().list(q=query, fields="files(id)").execute()
+              files = results.get('files', [])
+              if files:
+                  return files[0]['id']
+              
+              folder_metadata = {
+                  'name': name,
+                  'mimeType': 'application/vnd.google-apps.folder',
+                  'parents': [parent_id]
+              }
+              folder = drive_service.files().create(body=folder_metadata, fields='id').execute()
+              return folder.get('id')
+
+          # Helper to clear or overwrite an existing file cleanly
+          def upload_or_update_file(local_path, filename, parent_id):
+              query = f"name='{filename}' and '{parent_id}' in parents and trashed=false"
+              results = drive_service.files().list(q=query, fields="files(id)").execute()
+              files = results.get('files', [])
+              
+              media = MediaFileUpload(local_path, resumable=True)
+              file_metadata = {'name': filename, 'parents': [parent_id]}
+              
+              if files:
+                  # File exists, perform an explicit targeted update
+                  file_id = files[0]['id']
+                  drive_service.files().update(fileId=file_id, media_body=media).execute()
+                  print(f"Updated: {filename}")
+              else:
+                  # Create brand new clean record
+                  drive_service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+                  print(f"Uploaded: {filename}")
+
+          # Dictionary mapping path strings to their respective Google Drive Folder IDs
+          folder_cache = {'.': root_folder_id}
+
+          # 3. Securely crawl and push allowed items while retaining folder architecture
+          for root, dirs, files in os.walk('.'):
+              # Skip git tracking, action workflows, and hidden system artifacts entirely
+              if '.git' in root or '.github' in root:
+                  continue
+                  
+              # Resolve current remote folder ID
+              rel_path = os.path.relpath(root, '.')
+              if rel_path == '.':
+                  current_parent_id = root_folder_id
+              else:
+                  parent_rel = os.path.dirname(rel_path)
+                  folder_name = os.path.basename(rel_path)
+                  parent_drive_id = folder_cache[parent_rel]
+                  current_parent_id = get_or_create_drive_folder(folder_name, parent_drive_id)
+                  folder_cache[rel_path] = current_parent_id
+
+              for file in files:
+                  if file.lower().endswith(allowed_exts):
+                      local_file_path = os.path.join(root, file)
+                      upload_or_update_file(local_file_path, file, current_parent_id)
+
+          EOF
+          python sync_script.py
