@@ -28,7 +28,6 @@ jobs:
           DRIVE_FOLDER_ID: "12cIsrCochQvQE3zCurgseW4beGD6RdMZ"
           # 2. CHANGE THIS: List only the explicit file extensions your GEM Agent needs
           ALLOWED_EXTENSIONS: ".md,.txt,.json,.pdf,.tex,.cff,.png,.bib,.py,.ipynb"
-
         run: |
           cat << 'EOF' > sync_script.py
           import os
