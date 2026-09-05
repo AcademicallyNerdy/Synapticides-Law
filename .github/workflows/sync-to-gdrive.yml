@@ -44,6 +44,7 @@ jobs:
           creds = service_account.Credentials.from_service_account_info(
               info, scopes=['https://googleapis.com']
           )
+          creds.refresh(Request())
           drive_service = build('drive', 'v3', credentials=creds)
           print("Successfully authenticated with Google Drive!")
 
