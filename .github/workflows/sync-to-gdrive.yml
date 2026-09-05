@@ -65,13 +65,15 @@ jobs:
           drive_service = build('drive', 'v3', credentials=creds)
           print("Successfully authenticated with Google Drive!")
 
+          print("STARTING CLONE FROM GIT->DRIVE")
+
           # Helper to manage remote Drive folders synchronously to prevent duplicates
           def get_or_create_drive_folder(name, parent_id):
               query = f"name='{name}' and '{parent_id}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
               results = drive_service.files().list(q=query, fields="files(id)", supportsAllDrives=True, includeItemsFromAllDrives=True).execute()
               files = results.get('files', [])
               if files:
-                  return files['id']
+                  return files[0]['id'] # Added array selector fix
               
               folder_metadata = {
                   'name': name,
@@ -87,17 +89,29 @@ jobs:
               results = drive_service.files().list(q=query, fields="files(id)", supportsAllDrives=True, includeItemsFromAllDrives=True).execute()
               files = results.get('files', [])
               
-              media = MediaFileUpload(local_path, resumable=True)
-              file_metadata = {'name': filename, 'parents': [parent_id]}
+              # Read file directly into system memory to bypass the 0GB service account storage limit
+              with open(local_path, 'rb') as f:
+                  file_bytes = f.read()
+              
+              media = MediaInMemoryUpload(file_bytes, mimetype='application/octet-stream')
               
               if files:
                   # File exists, perform an explicit targeted update
-                  file_id = files['id']
+                  file_id = files[0]['id'] # Added array selector fix
                   drive_service.files().update(fileId=file_id, media_body=media, supportsAllDrives=True).execute()
                   print(f"Updated: {filename}")
               else:
-                  # Create brand new clean record using the parent folder storage pool
-                  drive_service.files().create(body=file_metadata, media_body=media, fields='id', supportsAllDrives=True).execute()
+                  file_metadata = {
+                      'name': filename, 
+                      'parents': [parent_id]
+                  }
+                  # Create the file via memory allocation directly to your shared drive folder
+                  drive_service.files().create(
+                      body=file_metadata, 
+                      media_body=media, 
+                      fields='id', 
+                      supportsAllDrives=True
+                  ).execute()
                   print(f"Uploaded: {filename}")
 
           # Dictionary mapping path strings to their respective Google Drive Folder IDs
@@ -125,5 +139,7 @@ jobs:
                       local_file_path = os.path.join(root, file)
                       upload_or_update_file(local_file_path, file, current_parent_id)
 
+          print("COMPLETED CLONE FROM GIT->DRIVE")
+          
           EOF
           python sync_script.py
