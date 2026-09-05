@@ -54,7 +54,7 @@ jobs:
           print(f"Number of items in decoded: {len(decoded)}")
           
           # Note: Use the full Google Drive scope if you are interacting with Drive files
-          SCOPES = ['https://googleapis.com'] 
+          SCOPES = ['https://www.googleapis.com/auth/drive']
           creds = service_account.Credentials.from_service_account_info(
               decoded, scopes=SCOPES
           )
