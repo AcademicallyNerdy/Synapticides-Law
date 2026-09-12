@@ -12,11 +12,14 @@ The following marks, phrases, and visual designs are common-law trademarks (™)
   - `Synapticide's Law™`
   - `Systemic AI Cascade Loss (SACL)™`
   - `Synapticide Maturity & Containment Framework (SMCF)™`
+  - `synapticide.org`
+  - `Synapticide`
 - **Tagline / Catchphrase:**
   - *"Machine-speed autonomy requires machine-speed governance."™*
 - **Visual Design Assets:**
   - The official Synapticide's Law™ delta/fracture logo mark.
   - All official SMCF compliance certification badges, seals, and audit mark graphics.
+  - All material found at: **synapticide.org** that are not expressed as being licensed by CC4.0 or MIT expressly where in, including but not limited to `Digital`, `Physical` and `Scientific` works.
 
 ---
 
