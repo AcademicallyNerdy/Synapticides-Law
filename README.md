@@ -66,9 +66,10 @@ SYNAPTICIDES-LAW-MAIN/
     │   ├── requirements.txt            # Python dependencies (NumPy, SciPy, Matplotlib)
     │   └── sacl_monte_carlo.py         # 10,000-run Monte Carlo loss simulation script
     │
-    └── tools/                                # Command-line & interactive cloud audit utilities
-            ├── sacl_audit.py                 # Lightweight CLI tool for enterprise SMCF™ auditing
-            └── colab_sacl_audit_py.ipynb     # Interactive Google Colab notebook for cloud scenario modeling
+    └── tools/                                     # Command-line & interactive cloud audit utilities
+            ├── sacl_audit.py                      # Lightweight CLI tool for enterprise SMCF™ auditing
+            ├── lyapunov_risk_energy_py.ipynb      # Lyapunov Risk Energy Trajectories Under Containment Regimes
+            └── colab_sacl_audit_py.ipynb          # Interactive Google Colab notebook for cloud scenario modeling
 ```
 
 ### 🏛️ Enterprise Architecture & GRC Integration
