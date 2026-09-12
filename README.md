@@ -51,6 +51,7 @@ SYNAPTICIDES-LAW-MAIN/
     ├── figures/                          # Manuscript diagrams, TikZ vectors & simulation plots
     │   ├── case_study_comparative.tex    # TikZ source for case study comparison graph
     │   ├── density_plot.png              # Probability density distribution of swarm losses
+    │   ├── lyapunov_kinematics.png       # Lyapunov Risk Energy Trajectories Under Containment Regimes 
     │   └── lec_curve.png                 # Loss Exceedance Curve (LEC) Monte Carlo plot
     │
     ├── sections/                       # Modular LaTeX manuscript chapters (01-07)
