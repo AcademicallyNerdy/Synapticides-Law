@@ -14,7 +14,7 @@ This manuscript establishes **Synapticide's Law™**, a fundamental theorem gove
 1. **The Systemic AI Cascade Loss (SACL)™ Model:** A quantitative actuarial model that formulates tail risk as Value-at-Risk ($`\text{VaR}_{95\%}`$) and loss exposure tensors ($`\mathbf{L}_{\text{Tensor}}`$) as a function of effective swarm velocity ($`V_E`$).
 2. **Deterministic Circuit Breaker Mechanics ($`K_{\text{cb}}`$):** Proof that machine-speed autonomy requires non-human, deterministic containment within $`t_{\text{cb}} \le 300\text{ seconds}`$ to prevent unbounded exposure.
 3. **The Synapticide Maturity & Containment Framework (SMCF)™:** A 4-tier operational compliance framework designed to integrate directly into TOGAF, NIST CSF 2.0, ISO 27001, and corporate M&A due diligence.
-4. Lyapunov Kinematics & Phase Transitions: Formal derivation of percolation thresholds ($\lambda_c = 1/\rho(A)$) and a control-theoretic Lyapunov stability proof demonstrating that automated step-functions are strictly required to enforce asymptotic risk decay ($\dot{V} < 0$).
+4. Lyapunov Kinematics & Phase Transitions: Formal derivation of percolation thresholds ($$\lambda c = 1/\rho(A)$$) and a control-theoretic Lyapunov stability proof demonstrating that automated step-functions are strictly required to enforce asymptotic risk decay ($$\dot{V} < 0$$).
 
 ### Verification & Reproducibility
 The theoretical findings in this paper are validated via a 10,000-run Monte Carlo simulation engine. All computational tools, CLI auditing scripts, and simulation source code are fully open-source and publicly archived under Zenodo DOI: 10.5281/zenodo.22168188.
