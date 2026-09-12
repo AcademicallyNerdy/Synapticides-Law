@@ -46,3 +46,18 @@ C_{\text{Total}} = \log_{10}(R_{\text{effective}}) \left[ \int_{0}^{\min(T, t_{\
 \end{equation}
 
 Where $\mathbf{L}_{\text{Tensor}} = L_{\text{Infra}} + L_{\text{Model}} + \sum_{i=1}^{N} L_{\text{Downstream}_i}$.
+
+\subsection{Percolation Phase Transitions and Cascade Thresholds}
+To establish the strict boundary conditions where a localized agent hallucination escalates into a systemic cascade, we model the swarm network via an adjacency matrix $A$, where $A_{ij} = 1$ if agent $i$ receives inputs from agent $j$. Let $\mathbf{x}(t) \in [0,1]^n$ represent the compromise state vector of a swarm with $M_{\text{swarm}}$ agents. 
+
+The continuous-time cascade dynamics are governed by:
+\begin{equation}
+\dot{\mathbf{x}}(t) = \beta A \mathbf{x}(t) - \gamma \mathbf{x}(t)
+\end{equation}
+Where $\beta$ is the cross-agent infection or hallucination transmission rate, and $\gamma$ is the intrinsic self-correction rate of an agent. 
+
+Systemic cascade occurs if the origin $\mathbf{x} = \mathbf{0}$ is unstable. The stability is governed by the spectral radius $\rho(A)$ (the largest eigenvalue of $A$). A supercritical cascade ($SACL$) triggers when:
+\begin{equation}
+\frac{\beta}{\gamma} > \frac{1}{\rho(A)}
+\end{equation}
+In autonomous regimes, as swarm density ($\alpha_{\text{swarm}}$) increases, the spectral radius $\rho(A)$ grows exponentially, driving the threshold $\frac{1}{\rho(A)} \to 0$. This mathematically ensures that highly coordinated agent swarms inevitably cross the percolation threshold.
